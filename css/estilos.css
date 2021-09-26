@@ -1,0 +1,151 @@
+/* 
+    1. Posicionamiento (Positioning)
+    2. Modelo De Caja (Box-model)
+    3. Tipografía (Typography)
+    4. Visual (Visual)
+    5. Misc (Misc)
+*/
+
+:root {
+    /* colores primarios */
+    --Very-dark-blue: hsl(233, 47%, 7%); /* (main background) */ 
+    --Dark-desaturated-blue: hsl(244, 38%, 16%); /* (card background) */
+    --Soft-violet: hsl(277, 64%, 61%); /* (accent) */
+
+    /* colores secundarios */
+    --White: hsl(0, 0%, 100%); /* (main heading, stats) */
+    --Slightly: hsla(0, 0%, 100%, 0.75); /* transparent white (main paragraph) */
+    --Slightly: hsla(0, 0%, 100%, 0.6); /* transparent white (stat headings) */
+
+    /* fuentes */
+    --fuente-lexend: 'Lexend Deca', sans-serif;;
+    --fuente-inter: 'Inter', sans-serif;;
+}
+
+html { 
+    box-sizing: border-box; 
+    font-size: 62.5%;
+} 
+   
+*, *:before, *:after { 
+    box-sizing: inherit; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-inter);
+    font-size: 1.5rem;
+    background-color: var(--Very-dark-blue);
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+body {
+    font-family: var(--fuente-inter);
+    font-size: 1.5rem;
+    background-color: var(--Very-dark-blue);
+}
+
+/* componente de la targeta */
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-tarjeta {
+    width: 100%;
+    max-width: 111.1rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-color: var(--Dark-desaturated-blue);
+}
+
+.textos-tarjetas,
+picture {
+    width: 50%;
+}
+
+.textos-tarjetas {
+    padding: 0 6rem;
+}
+
+.textos-tarjetas h1 {
+    margin-bottom: 4rem;
+    color: var(--White);
+}
+
+.textos-tarjetas h1 span {
+    color: var(--Soft-violet);
+}
+
+.elemento-texto-p {
+    color: var(--Slightly);
+}
+
+.estados {
+    margin-top: 8rem;
+    display: flex;
+    gap: 6rem;
+}
+
+.estados h3 {
+    font-size: 2.6rem;
+    color: var(--White);
+}
+
+.estados p {
+    text-transform: uppercase;
+    color: var(--Slightly);
+}
+
+@media (max-width: 870px) {
+    .contenedor-tarjeta {
+        margin: 8rem 3rem;
+        flex-direction: column-reverse;
+    }
+
+    .textos-tarjetas,
+    picture {
+        width: 100%;
+    }
+
+    .textos-tarjetas {
+        padding: 6rem;
+        text-align: center;
+    }
+
+    .estados {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 414px) {
+    .contenedor-tarjeta {
+        margin: 6rem 2rem;
+    }
+
+    .textos-tarjetas {
+        padding-top: 4.6rem;
+        padding-right: 3rem;
+        padding-bottom: 4.5rem;
+        padding-left: 3rem;
+        text-align: center;
+    }
+
+    .estados {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+}
